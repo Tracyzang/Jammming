@@ -4,13 +4,15 @@ import {Track} from '../Track/Track.js';
 
 export class TrackList extends React.Component {
   render() {
-    console.log(this.props.tracks);
     return (
       <div className="TrackList">
       {
         this.props.tracks.map(track => {
         return <Track
         track = {track}
+        name={track.name}
+        artist={track.artist}
+        album={track.album}
         key={track.id}
         onAdd={this.props.onAdd}
         onRemove={this.props.onRemove}

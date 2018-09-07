@@ -10,13 +10,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchResults:[
-      ],
-
-      playlistName:'',
-
-      playlistTracks:[
-      ]
+      searchResults:[],
+      playlistName:'New Playlist',
+      playlistTracks:[]
 
     }
 
@@ -59,10 +55,12 @@ class App extends React.Component {
 
   //savePlaylist method
   savePlaylist() {
-    let playlistName = this.state.playlistName;
-    let trackURIs = [];
-    this.state.playlistTracks.forEach(track => trackURIs.push(track.url));
-    Spotify.savePlaylist(playlistName,trackURIs);
+    const trackUris = this.state.playlistTracks.map(playlistTrack => playlistTrack.uri);
+    Spotify.savePlaylist(this.state.playlistName, trackUris);
+    this.setState({
+      searchResults: []
+    });
+    this.updatePlaylistName('New Playlist');
   }
 
   //search method

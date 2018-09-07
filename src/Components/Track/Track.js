@@ -29,17 +29,11 @@ export class Track extends React.Component{
   render() {
     return (
       <div className="Track">
-  <div className="Track-information">
-    <h3>{this.props.track.name}</h3>
-    <p>{this.props.track.artist}</p>
-    <div className="Track-audio" >
-      <audio controls>
-      <source src={this.props.track.preview_url} type="audio/mpeg" />
-              </audio>
-            </div>
-          </div>
-          {this.renderAction()}
-        </div>
-      );
-    }
-  };
+        <div className="Track-information">
+          <h3>{this.props.track.name}</h3>
+          <p>{this.props.track.artist} | {this.props.track.album}</p>
+        </div>{this.renderAction()}
+      </div>
+    )
+  }
+};
