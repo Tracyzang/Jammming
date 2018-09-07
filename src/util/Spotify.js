@@ -1,6 +1,6 @@
 
 const clientID = 'be5b3014440045a19cd3dc0c869245bc';
-const redirectURI = 'http://localhost:3000/';
+const redirectURI = 'https://polite-pest.surge.sh';
 const searchBase = 'https://api.spotify.com/v1/';
 const accessBase = 'https://accounts.spotify.com/authorize';
 
