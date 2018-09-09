@@ -24,6 +24,8 @@ export const Spotify = {
       window.location = accessURL;
     }
   },
+
+  //search Spotify library 
   search(term) {
     let token = Spotify.getAccessToken();
     return fetch(`${searchBase}search?type=track&q=${term}`, {
@@ -45,6 +47,7 @@ export const Spotify = {
       }))
     })
   },
+
   savePlaylist(name, trackUris) {
     if (!name || !trackUris || trackUris.length === 0) return;
     const searchURL = searchBase + 'me';

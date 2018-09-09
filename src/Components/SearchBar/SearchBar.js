@@ -25,6 +25,7 @@ export class SearchBar extends React.Component{
     this.setState({term: event.target.value});
   }
 
+//press enter triggers search 
   handleEnterKey(event) {
     if (event.keyCode === 13)
     this.search();
